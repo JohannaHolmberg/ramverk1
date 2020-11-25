@@ -1,0 +1,22 @@
+/*!
+ * An empty stylesheet.
+ *
+ * To use for showing how the website looks when there is no style at all.
+ */
+
+body {
+    background-color: #ededed;
+    font-family: 'Roboto';
+}
+
+h1, a {
+    font-family: 'Roboto';
+}
+
+.inner-wrap-main {
+    max-width: 80%;
+}
+
+.rm-default a {
+    font-size: 1.3em;
+}
