@@ -9,7 +9,7 @@ use Anax\DI\DIMagic;
 /**
  * Test the SampleController.
  */
-class IpAddressControllerTest extends TestCase
+class IpAddressLocationControllerJSONTest extends TestCase
 {
     // Create the di container.
     protected $di;
@@ -28,19 +28,27 @@ class IpAddressControllerTest extends TestCase
         // Use a different cache dir for unit test
         $di->get("cache")->setPath(ANAX_INSTALL_PATH . "/test/cache/anax");
 
+        # set the mock  as a service to override  the existing ones
+        # service into $di
+        $di->setShared("Anax\Model\GetGlobalVariables", "Anax\Mock\MockGlobalVariables");
         $this->di = $di;
     }
 
-
     public function testindexAction()
     {
-        $controller = new IpAddressController();
+        $controller = new IpAddressLocationController();
         $controller->setDI($this->di);
 
         // Test the controller action
         $res = $controller->indexAction();
 
-        $body = $res->getBody("ipaddress");
-        $this->assertIsString($body);
+        $body = $res->getBody();
+        // $this->assertIsString($body);
+        $this->assertStringContainsString("ipaddress", $body);
+
+        // $output = $this->request('GET', ['indexAction']);
+        // $expected = '<h2>Ip adress location<h2>';
+        //
+        // $this->assertContains($expected, $output);
     }
 }

@@ -58,5 +58,15 @@ return [
             "url" => "ipaddress/validateJSONip",
             "title" => "Testa en JSON IP adress.",
         ],
+        [
+            "text" => "Ip adress location",
+            "url" => "ipaddress/iplocation",
+            "title" => "Ip adress location",
+        ],
+        [
+            "text" => "Ip adress location JSON",
+            "url" => "ipaddress/iplocationjson",
+            "title" => "Ip adress location JSON",
+        ],
     ],
 ];

@@ -4,6 +4,7 @@ namespace Anax\Controller;
 
 use Anax\DI\DIFactoryConfig;
 use PHPUnit\Framework\TestCase;
+use Anax\DI\DIMagic;
 
 /**
  * Test the SampleController.
@@ -21,7 +22,7 @@ class IpAddressJSONControllerTest extends TestCase
         global $di;
 
         // Setup di
-        $di = new \Anax\DI\DIMagic();
+        $di = new DIMagic();
         $di->loadServices(ANAX_INSTALL_PATH . "/config/di");
 
         // Use a different cache dir for unit test

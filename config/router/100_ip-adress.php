@@ -13,6 +13,16 @@ return [
             "info" => "Validera JSON IP adress",
             "mount" => "ipaddress/validateJSONip",
             "handler" => "\Anax\Controller\IpAddressJSONController",
+        ],
+        [
+            "info" => "Ip Address Location",
+            "mount" => "ipaddress/iplocation",
+            "handler" => "\Anax\Controller\IpAddressLocationController",
+        ],
+        [
+            "info" => "Ip Address Location JSON",
+            "mount" => "ipaddress/iplocationjson",
+            "handler" => "\Anax\Controller\IpAddressJSONLocationController",
         ]
     ]
 ];
